@@ -49,9 +49,11 @@ const LoginSignup = () => {
     e.preventDefault();
     const { isValid, errors } = loginAllValidation(loginCont);
     if (isValid) {
-      const allMember = JSON.parse(
-        localStorage.getItem("Raman-Current-SignUped")
-      );
+      const storedValue = localStorage.getItem("Raman-Current-SignUped");
+      let allMember;
+      if (storedValue) allMember = JSON.parse(storedValue);
+      else allMember = [];
+
       for (let member of allMember) {
         if (
           member.email === loginCont.email &&
@@ -82,8 +84,11 @@ const LoginSignup = () => {
     }
     const { isValid, errors } = signUpAllValidation(signupCont);
     if (isValid) {
-      const allMember =
-        JSON.parse(localStorage.getItem("Raman-Current-SignUped")) || [];
+      const storedValue = localStorage.getItem("Raman-Current-SignUped");
+      let allMember;
+      if (storedValue) allMember = JSON.parse(storedValue);
+      else allMember = [];
+
       for (let member of allMember) {
         if (member.email === signupCont.email) {
           setError(["signup", "user already exist"]);
