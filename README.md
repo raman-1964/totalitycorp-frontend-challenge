@@ -8,7 +8,9 @@ A modern, intuitive shopping app designed to provide a seamless online shopping 
 
 ## 🚀 Features
 
-- **User Authentication**: Allow users to sign up, log in, and log out.
+### Authentication
+
+- **User Authentication**: Allow users to sign up, log in, and log out, if user with a specific email already exist, then it can't be signup with that email again.
 
 ### 🛒 Cart
 
