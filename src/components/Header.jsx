@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    if (location.pathname != "/") setShowSearch(false);
+    if (location.pathname !== "/") setShowSearch(false);
   }, []);
 
   return (

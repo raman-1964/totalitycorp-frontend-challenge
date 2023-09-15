@@ -22,7 +22,7 @@ const Cart = () => {
     setCost(
       cart.reduce((accum, item) => accum + Number(item.price) * item.qty, 0)
     );
-  }, [cart]);
+  }, [cart.length]);
 
   useEffect(() => {
     const handleResize = () => setWindowDimension(getWindowDimension());
